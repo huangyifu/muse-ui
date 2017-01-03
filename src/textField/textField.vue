@@ -173,10 +173,12 @@ export default {
       if (val > this.maxLength && !this.isTextOverflow) {
         this.isTextOverflow = true
         this.$emit('textOverflow', true)
+        this.$emit('text-overflow', true)
       }
       if (this.isTextOverflow && val <= this.maxLength) {
         this.isTextOverflow = false
         this.$emit('textOverflow', false)
+        this.$emit('text-overflow', false)
       }
     }
   },
@@ -234,8 +236,8 @@ export default {
     color: @disabledColor;
     cursor: not-allowed;
   }
-  padding-bottom: 8px;
-  padding-top: 8px;
+  padding-bottom: 12px;
+  padding-top: 4px;
   .mu-text-field.has-label &{
     padding-top: 28px;
     padding-bottom: 12px;
